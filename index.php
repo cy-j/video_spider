@@ -5,9 +5,9 @@ ini_set('display_errors','off');
 error_reporting(E_ALL || ~E_NOTICE);
 require 'src/video_spider.php';
 $url = $_REQUEST['url'];
-$id = $_REQUEST['id']; //微视 isee
-$vid = $_REQUEST['vid']; //全民
-$basai_id = $_REQUEST['data']; //巴塞电影
+$id = $_GET['id'];
+$vid = $_GET['vid'];
+$basai_id = $_GET['data'];
 use Video_spider\Video;
 $api = new Video;
 if (strpos($url,'pipix') !== false){
@@ -44,10 +44,12 @@ if (strpos($url,'pipix') !== false){
     $arr = $api->vuevlog($url);
 } elseif (strpos($url, 'xiaokaxiu') !== false){
     $arr = $api->xiaokaxiu($url);
-} elseif (strpos($url, 'ippzone') !== false){
+} elseif (strpos($url, 'ippzone') !== false || strpos($url,'pipigx') !== false ){
     $arr = $api->pipigaoxiao($url);
 } elseif (strpos($url, 'qq.com') !== false){
     $arr = $api->quanminkge($url);
+} elseif (strpos($url, 'ixigua.com') !== false){
+    $arr = $api->xigua($url);
 } else {
     $arr = array(
         'code'  => 201,
@@ -55,6 +57,13 @@ if (strpos($url,'pipix') !== false){
     );
 }
 if (!empty($arr)){
+    echo json_encode($arr, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+}
+else{
+    $arr = array(
+        'code' => 201,
+        'msg' => '解析失败',
+    );
     echo json_encode($arr, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 ?>

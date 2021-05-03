@@ -1,5 +1,5 @@
 # Video_spider
-目前支持15个平台视频去水印下载，欢迎各位Star，提交issues前请先查看[支持的链接](https://github.com/5ime/video_spider#%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F)
+目前支持16个平台视频去水印下载，欢迎各位Star，提交issues前请先查看[支持的链接](https://github.com/5ime/video_spider#%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F)
 
 ## 支持平台
 
@@ -8,7 +8,7 @@
 | 皮皮虾 | ✔ | 抖音短视频 | ✔ | 火山短视频 | ✔| 皮皮搞笑 | ✔ | 全民K歌 | ✔ |
 | 微视短视频 | ✔ | 微博 | ✔ | 最右 | ✔| vuevlog | ✔ |小咖秀| ✔|
 | 轻视频 | ✔ | 快手短视频 | ✔ | 全民小视频 | ✔|陌陌 | ✔ | Before避风 | ✔ | 开眼 | ✔|
-
+| 西瓜视频 | ✔|
 ## 请求示例
 
 支持GET/POST `url`参数必填
@@ -36,13 +36,13 @@
 <summary>点我展开</summary>
 
 ```text
- 皮皮虾：https://h5.pipix.com/s/JrQ5yNH/
- 抖音：http://v.douyin.com/5w5JwL/
- 火山：https://share.huoshan.com/hotsoon/s/CpNjM1bqNa8/
- 微视：https://h5.weishi.qq.com/weishi/feed/76EaWNkEF1IqtfYVH/
-       https://isee.weishi.qq.com/ws/app-pages/share/index.html?wxplay=1&id=71sGFcjJ51LczPOQB&collectionid=ai-602fb09fbf6f04f1626a4abc&spid=1579870022402553&qua=v1_and_weishi_8.10.0_588_312027000_d&chid=100081003&pkg=&attach=cp_reserves3_1000370721
+皮皮虾：https://h5.pipix.com/s/JrQ5yNH/
+抖音：http://v.douyin.com/5w5JwL/
+火山：https://share.huoshan.com/hotsoon/s/CpNjM1bqNa8/
+微视：https://h5.weishi.qq.com/weishi/feed/76EaWNkEF1IqtfYVH/
+     https://isee.weishi.qq.com/ws/app-pages/share/index.html?wxplay=1&id=71sGFcjJ51LczPOQB&collectionid=ai-602fb09fbf6f04f1626a4abc&spid=1579870022402553&qua=v1_and_weishi_8.10.0_588_312027000_d&chid=100081003&pkg=&attach=cp_reserves3_1000370721
 微博：https://weibo.com/tv/show/1034:4607135049515082?mid=46456489789
-      https://video.weibo.com/show?fid=1034:4605703432896565
+     https://video.weibo.com/show?fid=1034:4605703432896565
 绿洲：https://m.oasis.weibo.cn/v1/h5/share?sid=4497689997350015&luicode=10001122&lfid=lz_qqfx&bid=4497689997350015
 最右：https://share.izuiyou.com/hybrid/share/post?pid=196279131&zy_to=applink&share_count=1&m=0372f49e6e3c576a56498dc65e626d8f&d=eda64ae931b41c1
 轻视频：https://bbq.bilibili.com/video/?id=1580113023042844866
@@ -55,7 +55,10 @@
 Vuevlog：https://v.vuevideo.net/share/post/2586974035524877860
 小咖秀：https://mobile.xiaokaxiu.com/video?id=84123438
 皮皮搞笑：http://h5.ippzone.com/pp/post/78266943052
+          https://h5.pipigx.com/pp/post/444865887503
 全民k歌：https://kg3.qq.com/node/user/bb132c338e/song/play-edLkcwAsRj?s=bCyoDlbCUhcjXbkQ&shareuid=&topsource=znxvljkwehoit_rqojkwehfguioqef_fnajkgfb&g_f=
+西瓜视频：https://www.ixigua.com/6920910734943584771
+         https://v.ixigua.com/eFYxWw9/
 ```
 
 </details>
@@ -64,6 +67,9 @@ Vuevlog：https://v.vuevideo.net/share/post/2586974035524877860
 
 - 2021/2/21 新增微视 isee前缀域名，新增皮皮搞笑 修复微博匹配失败
 - 2021/2/23 修复全民匹配失败，修复避风匹配失败，新增全民K歌
+- 2021/3/26 新增视频解析失败返回`201`参数
+- 2021/3/27 新增西瓜视频 请在`video_spider.php`文件第`426`行填写你的西瓜视频`cookies`,无需登录
+- 2021/4/26 新增皮皮搞笑pipigx主域
 
 ## 免责声明
 
